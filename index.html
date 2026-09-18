@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EventifyAllure | Luxury Event Décor &amp; Styling, Minnesota</title>
-<meta name="description" content="EventifyAllure is a Minnesota based luxury event décor and styling studio crafting elevated celebrations, from intimate baby showers to grand weddings.">
+<title>EventifyAllure.co</title>
+<!-- <meta name="description" content="EventifyAllure is a Minnesota based luxury event décor and styling studio crafting elevated celebrations, from intimate baby showers to grand weddings."> -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -108,6 +108,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.12;}
 
 .mobile-menu{position:fixed;inset:0;background:var(--paper);z-index:200;display:flex;flex-direction:column;justify-content:center;padding:var(--gutter);clip-path:inset(0 0 100% 0);transition:clip-path .7s var(--ease);visibility:hidden;}
 .mobile-menu.open{clip-path:inset(0 0 0% 0);visibility:visible;}
+.mobile-menu .close{position:absolute;top:1.35rem;right:var(--gutter);font-size:1.8rem;line-height:1;width:40px;height:40px;display:flex;align-items:center;justify-content:center;z-index:1;}
 .mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:1.1rem;}
 .mobile-menu a{font-family:var(--serif);font-size:clamp(2rem,8vw,2.8rem);display:inline-block;transform:translateY(30px);opacity:0;transition:transform .6s var(--ease),opacity .6s;}
 .mobile-menu.open a{transform:translateY(0);opacity:1;}
@@ -405,6 +406,7 @@ footer{border-top:1px solid var(--line);padding:clamp(3rem,6vw,4.5rem) 0 2rem;po
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
+  <button class="close" id="closeMenu" aria-label="Close menu">&times;</button>
   <ul>
     <li><a href="about.html">About</a></li>
     <li><a href="services.html">Services</a></li>
@@ -804,6 +806,7 @@ function toggleMenu(open){
 }
 burger.addEventListener('click', () => toggleMenu(!menu.classList.contains('open')));
 menu.querySelectorAll('a, button').forEach(el => el.addEventListener('click', () => toggleMenu(false)));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
 
 /* Duplicate marquee and strip tracks for seamless loop */
 ['marqueeTrack', 'stripTrack'].forEach(id => {
