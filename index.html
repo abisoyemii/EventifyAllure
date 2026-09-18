@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EventifyAllure.co</title>
+<link rel="icon" type="image/jpeg" href="images/eventifylogo.jpeg">
 <!-- <meta name="description" content="EventifyAllure is a Minnesota based luxury event décor and styling studio crafting elevated celebrations, from intimate baby showers to grand weddings."> -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -338,6 +339,7 @@ footer{border-top:1px solid var(--line);padding:clamp(3rem,6vw,4.5rem) 0 2rem;po
   .sticky-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:150;background:rgba(250,247,241,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:.75rem var(--gutter);gap:.7rem;}
   .sticky-cta a{flex:0 0 auto;display:flex;align-items:center;justify-content:center;padding:.85em 1.3em;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;border:1px solid var(--ink);}
   .sticky-cta button{flex:1;background:var(--ink);color:var(--paper);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;}
+  .sticky-cta a[href="booking.html"]{flex:1;background:var(--ink);color:var(--paper);}
   body{padding-bottom:66px;}
 }
 
@@ -435,7 +437,7 @@ footer{border-top:1px solid var(--line);padding:clamp(3rem,6vw,4.5rem) 0 2rem;po
       <p class="hero-tag hero-fade d2">Beautifully curated, down to the last detail.</p>
       <!-- <p class="hero-lede hero-fade d2">A Minnesota based studio transforming celebrations into intentional, unforgettable experiences, from intimate gatherings to grand occasions.</p> -->
       <!-- <div class="hero-ctas hero-fade d3"> -->
-        <button class="btn btn-solid" data-open-modal data-cursor><span>Book Your Event</span><span class="arr">→</span></button>
+        <a class="btn btn-solid" href="booking.html" data-cursor><span>Book Your Event</span><span class="arr">→</span></a>
         <a href="services.html" class="btn btn-line" data-cursor><span>View Services</span></a>
       </div>
     </div>
@@ -603,7 +605,7 @@ footer{border-top:1px solid var(--line);padding:clamp(3rem,6vw,4.5rem) 0 2rem;po
       <h2 class="reveal" style="--d:.1s">Let's create something <em>unforgettable.</em></h2>
       <p class="reveal" style="--d:.2s">Tell us what you are imagining. We will help you turn it into something extraordinary.</p>
       <div class="cta-ctas reveal" style="--d:.3s">
-        <button class="btn btn-solid" data-open-modal data-cursor><span>Book Your Event</span><span class="arr">→</span></button>
+        <a class="btn btn-solid" href="booking.html" data-cursor><span>Book Your Event</span><span class="arr">→</span></a>
         <a class="btn btn-line" href="tel:+16126956942" data-cursor><span>Call (612) 695-6942</span></a>
       </div>
       <p class="cta-alt reveal" style="--d:.4s">Reach us on <a href="https://wa.me/16126956942" target="_blank" rel="noopener" data-cursor>WhatsApp</a> or write to <a href="mailto:Info@eventifyallure.com" data-cursor>Info@eventifyallure.com</a></p>
@@ -654,7 +656,7 @@ footer{border-top:1px solid var(--line);padding:clamp(3rem,6vw,4.5rem) 0 2rem;po
 
 <div class="sticky-cta">
   <a href="tel:+16126956942" aria-label="Call EventifyAllure">Call</a>
-  <button data-open-modal>Book Your Event</button>
+  <a href="booking.html">Book Your Event</a>
 </div>
 
 <!-- ============ INQUIRY MODAL ============ -->
