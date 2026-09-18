@@ -1,4 +1,4 @@
-/* Confirms JS actually ran — see the matching .js-ready rule in style.css.
+/* Confirms JS actually ran. See the matching .js-ready rule in style.css.
    Also force-reveals everything after 2.5s no matter what, as a second safety net. */
 document.documentElement.classList.add('js-ready');
 setTimeout(() => {
@@ -139,7 +139,7 @@ if (lbTiles.length && lightbox) {
   });
 }
 
-/* ============ INQUIRY MODAL (every page — the quick popup version) ============ */
+/* ============ INQUIRY MODAL (every page: the quick popup version) ============ */
 const overlay = document.getElementById('modalOverlay');
 if (overlay) {
   const modalSteps = overlay.querySelectorAll('[data-modal-step]');
@@ -163,13 +163,13 @@ if (overlay) {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModalFn(); });
 } else {
   // Even without the popup modal on this page, "data-open-modal" buttons should still
-  // go somewhere useful — send them to the dedicated Booking page.
+  // Go somewhere useful: send them to the dedicated Booking page.
   document.querySelectorAll('[data-open-modal]').forEach(b => {
     b.addEventListener('click', () => { window.location.href = 'booking.html'; });
   });
 }
 
-/* ============ INLINE BOOKING STEPPER (Booking page — full page version, not a popup) ============ */
+/* ============ INLINE BOOKING STEPPER (Booking page: full page version, not a popup) ============ */
 const bookingForm = document.getElementById('bookingForm');
 if (bookingForm) {
   const steps = bookingForm.querySelectorAll('[data-modal-step]');

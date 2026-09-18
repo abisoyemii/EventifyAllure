@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Booking &mdash; EventifyAllure</title>
+<title>Booking | EventifyAllure</title>
 <meta name="description" content="Start planning your event with EventifyAllure. Answer a few quick questions and we'll follow up to bring your vision to life.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,20 +18,20 @@
 <meta property="og:image" content="images/babyshower4.jpeg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="images/babyshower4.jpeg">
-<meta property="og:title" content="Book Your Event &mdash; EventifyAllure">
+<meta property="og:title" content="Book Your Event | EventifyAllure">
 <meta property="og:description" content="Start planning your celebration with EventifyAllure, a Minnesota-based luxury event styling studio.">
-<meta name="twitter:title" content="Book Your Event &mdash; EventifyAllure">
+<meta name="twitter:title" content="Book Your Event | EventifyAllure">
 <meta name="twitter:description" content="Start planning your celebration with EventifyAllure, a Minnesota-based luxury event styling studio.">
 <style>
 :root{
-  /* Neutral palette straight from the logo — white, sand, light brown. No black sections. */
+  /* Neutral palette straight from the logo: white, sand, light brown. No black sections. */
   --paper:#FAF7F2;
   --sand:#F0E8DB;
   --taupe:#B9A88F;
   --mocha:#7A6C5A;
   --ink:#2B2620;
   --line: rgba(43,38,32,0.14);
-  /* Extended warm neutrals for the portfolio colour-field system — no photography needed */
+  /* Extended warm neutrals for the portfolio colour-field system. No photography needed */
   --wash-1:#F4EEE2; --wash-2:#EEE1CC; --wash-3:#E7D7BE; --wash-4:#EFE7D8; --wash-5:#E2D3BA; --wash-6:#ECE0CB;
   --serif:"Fraunces", serif; --sans:"Archivo", sans-serif;
   --fs-hero: clamp(2.4rem, 5.4vw, 4.2rem);
@@ -48,7 +48,7 @@ body{
   margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:var(--fs-body); line-height:1.65;
   -webkit-font-smoothing:antialiased; position:relative;
 }
-/* Subtle paper grain — adds warmth and tactility without a single photograph */
+/* Subtle paper grain adds warmth and tactility without a single photograph */
 body::before{
   content:""; position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.05; mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -66,7 +66,7 @@ input,select,textarea{font-family:inherit; font-size:1.02rem;}
 .eyebrow{ font-size:.76rem; letter-spacing:.16em; text-transform:uppercase; font-weight:600; color:var(--mocha); }
 .rule{ border:none; border-top:1px solid var(--line); }
 /* Fail-safe: content is visible by default. Only once JS confirms it's running
-   (by adding "js-ready" to <html>) does .reveal hide pre-animation — so a broken
+  (by adding "js-ready" to <html>) does .reveal hide pre-animation, so a broken
    or blocked script can never leave the page looking empty. */
 .js-ready .reveal{ opacity:0; transform:translateY(16px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
 .reveal.in{ opacity:1; transform:translateY(0); }
@@ -176,7 +176,7 @@ input,select,textarea{font-family:inherit; font-size:1.02rem;}
 .about p{ margin-top:1.3rem; color:var(--mocha); max-width:56ch; }
 @media (max-width:700px){ .about{ grid-template-columns:1fr; } .about-copy{ text-align:center; } .about-image{ aspect-ratio:5/4; } }
 
-/* ============ SERVICES — image fades in/out directly on the hovered row ============ */
+/* ============ SERVICES: image fades in/out directly on the hovered row ============ */
 .services-head{ text-align:center; max-width:560px; margin:0 auto clamp(2rem,4vw,3rem); }
 .services-head h2{ font-family:var(--serif); font-weight:400; font-size:var(--fs-h1); margin-top:.6rem; }
 .svc-list{ border-top:1px solid var(--line); max-width:760px; margin:0 auto; }
@@ -231,7 +231,7 @@ input,select,textarea{font-family:inherit; font-size:1.02rem;}
 .folio-tile .soon{ font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink); opacity:.55; }
 @media (max-width:700px){ .folio-grid{ grid-template-columns:1fr 1fr; } }
 
-/* ============ TESTIMONIALS — text only ============ */
+/* ============ TESTIMONIALS: text only ============ */
 .testi{ text-align:center; max-width:700px; margin:0 auto; }
 .testi-quote{ font-family:var(--serif); font-style:italic; font-weight:400; font-size:clamp(1.25rem,2.4vw,1.6rem); line-height:1.5; display:none; }
 .testi-quote.active{ display:block; }
@@ -249,7 +249,7 @@ input,select,textarea{font-family:inherit; font-size:1.02rem;}
 .cta-alt{ margin-top:1.4rem; font-size:.86rem; color:var(--mocha); }
 .cta-alt a{ border-bottom:1px solid var(--taupe); }
 
-/* ============ FOOTER — light, minimal ============ */
+/* ============ FOOTER: light, minimal ============ */
 footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2rem; }
 .footer-grid{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:2rem; }
 .footer-logo img{ height:58px; width:auto; mix-blend-mode:multiply; }
@@ -270,7 +270,7 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
   body{ padding-bottom:64px; }
 }
 
-/* ============ MODAL — restyled light/neutral ============ */
+/* ============ MODAL: restyled light/neutral ============ */
 .modal-overlay{ position:fixed; inset:0; background:rgba(43,38,32,.45); z-index:300; display:flex; align-items:center; justify-content:center; padding:1.5rem; opacity:0; pointer-events:none; transition:opacity .35s var(--ease); }
 .modal-overlay.open{ opacity:1; pointer-events:auto; }
 .modal{ background:var(--paper); width:min(620px,100%); max-height:88vh; overflow-y:auto; position:relative; padding:clamp(1.8rem,4vw,2.6rem); border:1px solid var(--line); transform:translateY(16px); transition:transform .4s var(--ease); }
@@ -299,7 +299,7 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
 .thankyou .lead{ font-family:var(--serif); font-style:italic; font-size:1.4rem; display:block; margin-bottom:.8rem; }
 
 /* ============ BRAND LINE MOTIF ============ */
-/* A small graphic language drawn from the logo's own diagonal strokes — used
+/* A small graphic language drawn from the logo's own diagonal strokes, used
    instead of stock photography to add visual interest that is unmistakably ours. */
 .motif{ display:block; opacity:.9; }
 .motif path{ stroke:currentColor; stroke-width:2.4; fill:none; stroke-linecap:square; }
@@ -324,7 +324,7 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
 .faq-a p{ padding:0 0 1.4rem; color:var(--mocha); max-width:60ch; }
 .faq-item.open .faq-a{ max-height:220px; opacity:1; }
 
-/* ============ LIGHTBOX — view portfolio photos full size ============ */
+/* ============ LIGHTBOX: view portfolio photos full size ============ */
 .lightbox{ position:fixed; inset:0; z-index:400; background:rgba(43,38,32,.92); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .4s var(--ease); }
 .lightbox.open{ opacity:1; pointer-events:auto; }
 .lightbox-frame{ position:relative; max-width:min(92vw,1100px); max-height:86vh; }
@@ -398,7 +398,7 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
 <body>
 
 <nav class="nav">
-  <a href="index.html" class="nav-logo" aria-label="EventifyAllure — home"><img src="images/eventifylogo.jpeg" alt="EventifyAllure"></a>
+  <a href="index.html" class="nav-logo" aria-label="EventifyAllure home"><img src="images/eventifylogo.jpeg" alt="EventifyAllure"></a>
   <ul class="nav-links">
     <li><a href="about.html">About</a></li>
     <li><a href="services.html">Services</a></li>
@@ -482,7 +482,7 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
           <h3>Let's talk investment.</h3>
           <div class="field">
             <label>Budget Range</label>
-            <select><option>Under $500</option><option>$500 &ndash; $1,500</option><option>$1,500 &ndash; $3,000</option><option>$3,000 &ndash; $6,000</option><option>$6,000+</option></select>
+            <select><option>Under $500</option><option>$500 to $1,500</option><option>$1,500 to $3,000</option><option>$3,000 to $6,000</option><option>$6,000+</option></select>
           </div>
           <div class="modal-nav"><button class="step-back" data-back>&larr; Back</button><button class="btn btn-solid" data-submit>Send Inquiry <span class="arrow">&rarr;</span></button></div>
         </div>
@@ -517,7 +517,7 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
       <div class="faq-list reveal">
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false"><span>How far in advance should I book?</span><span class="faq-toggle">+</span></button>
-          <div class="faq-a"><p>We recommend reaching out as soon as you have a date in mind &mdash; popular weekends fill quickly. That said, we always try to accommodate shorter timelines where we can.</p></div>
+          <div class="faq-a"><p>We recommend reaching out as soon as you have a date in mind. Popular weekends fill quickly. That said, we always try to accommodate shorter timelines where we can.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false"><span>Do you require a deposit?</span><span class="faq-toggle">+</span></button>
@@ -529,14 +529,14 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false"><span>Can you work with a specific theme or color palette?</span><span class="faq-toggle">+</span></button>
-          <div class="faq-a"><p>Always. Every design starts with your vision &mdash; your palette, your theme, your venue &mdash; rather than fitting you into a template.</p></div>
+          <div class="faq-a"><p>Always. Every design starts with your vision, your palette, your theme, and your venue, rather than fitting you into a template.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false"><span>What's included in setup?</span><span class="faq-toggle">+</span></button>
           <div class="faq-a"><p>We handle full setup and teardown as part of our service, so you and your guests can simply arrive and enjoy.</p></div>
         </div>
       </div>
-      <!-- <p class="placeholder-note reveal" style="text-align:center;">Answers above are starting placeholders &mdash; replace with your exact policies (deposit amount, notice period, travel fees) before launch.</p> -->
+      <!-- <p class="placeholder-note reveal" style="text-align:center;">Answers above are starting placeholders. Replace with your exact policies (deposit amount, notice period, travel fees) before launch.</p> -->
     </div>
   </section>
 
@@ -580,7 +580,7 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 EventifyAllure.</p>
-      <p>Serving Minnesota &amp; surrounding areas &mdash; travel available</p>
+      <p>Serving Minnesota &amp; surrounding areas. Travel available.</p>
     </div>
   </div>
 </footer>
@@ -640,7 +640,7 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
       <h3>Let's talk investment.</h3>
       <div class="field">
         <label>Budget Range</label>
-        <select><option>Under $500</option><option>$500 &ndash; $1,500</option><option>$1,500 &ndash; $3,000</option><option>$3,000 &ndash; $6,000</option><option>$6,000+</option></select>
+        <select><option>Under $500</option><option>$500 to $1,500</option><option>$1,500 to $3,000</option><option>$3,000 to $6,000</option><option>$6,000+</option></select>
       </div>
       <div class="modal-nav"><button class="step-back" data-back>&larr; Back</button><button class="btn btn-solid" data-submit>Send Inquiry <span class="arrow">&rarr;</span></button></div>
     </div>
@@ -655,7 +655,7 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
 </div>
 
 <script>
-/* Confirms JS actually ran — see the matching .js-ready rule in style.css.
+/* Confirms JS actually ran. See the matching .js-ready rule in style.css.
    Also force-reveals everything after 2.5s no matter what, as a second safety net. */
 document.documentElement.classList.add('js-ready');
 setTimeout(() => {
@@ -785,7 +785,7 @@ if (lbTiles.length && lightbox) {
   });
 }
 
-/* ============ INQUIRY MODAL (every page — the quick popup version) ============ */
+/* ============ INQUIRY MODAL (every page: the quick popup version) ============ */
 const overlay = document.getElementById('modalOverlay');
 if (overlay) {
   const modalSteps = overlay.querySelectorAll('[data-modal-step]');
@@ -809,13 +809,13 @@ if (overlay) {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModalFn(); });
 } else {
   // Even without the popup modal on this page, "data-open-modal" buttons should still
-  // go somewhere useful — send them to the dedicated Booking page.
+  // Go somewhere useful: send them to the dedicated Booking page.
   document.querySelectorAll('[data-open-modal]').forEach(b => {
     b.addEventListener('click', () => { window.location.href = 'booking.html'; });
   });
 }
 
-/* ============ INLINE BOOKING STEPPER (Booking page — full page version, not a popup) ============ */
+/* ============ INLINE BOOKING STEPPER (Booking page: full page version, not a popup) ============ */
 const bookingForm = document.getElementById('bookingForm');
 if (bookingForm) {
   const steps = bookingForm.querySelectorAll('[data-modal-step]');
