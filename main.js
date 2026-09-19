@@ -165,7 +165,7 @@ if (overlay) {
   // Even without the popup modal on this page, "data-open-modal" buttons should still
   // Go somewhere useful: send them to the dedicated Booking page.
   document.querySelectorAll('[data-open-modal]').forEach(b => {
-    b.addEventListener('click', () => { window.location.href = 'booking.html'; });
+    b.addEventListener('click', () => { window.location.href = '/booking'; });
   });
 }
 

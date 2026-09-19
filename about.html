@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About | EventifyAllure</title>
+<link rel="canonical" href="https://eventifyallure.co/about">
 <meta name="description" content="Meet EventifyAllure, a Minnesota-based luxury event décor and styling studio led by Adenike.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -264,7 +265,7 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
   .sticky-cta{ display:flex; position:fixed; left:0; right:0; bottom:0; z-index:150; background:var(--paper); border-top:1px solid var(--line); padding:.8rem var(--gutter); gap:.6rem; }
   .sticky-cta a{ flex:0 0 auto; display:flex; align-items:center; justify-content:center; padding:.8em 1.1em; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; font-weight:600; border:1px solid var(--ink); }
   .sticky-cta button{ flex:1; background:var(--ink); color:var(--paper); font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; font-weight:600; }
-  .sticky-cta a[href="booking.html"]{ flex:1; background:var(--ink); color:var(--paper); }
+  .sticky-cta a[href="/booking"]{ flex:1; background:var(--ink); color:var(--paper); }
   body{ padding-bottom:64px; }
 }
 
@@ -402,13 +403,13 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
 <body>
 
 <nav class="nav">
-  <a href="index.html" class="nav-logo" aria-label="EventifyAllure home"><img src="images/eventifylogo.jpeg" alt="EventifyAllure"></a>
+  <a href="/" class="nav-logo" aria-label="EventifyAllure home"><img src="images/eventifylogo.jpeg" alt="EventifyAllure"></a>
   <ul class="nav-links">
-    <li><a href="about.html" class="is-current">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="booking.html">Booking</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="/about" class="is-current">About</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/booking">Booking</a></li>
+    <li><a href="/contact">Contact</a></li>
   </ul>
   <button class="nav-cta" data-open-modal>Inquire</button>
   <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
@@ -417,11 +418,11 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
 <div class="mobile-menu" id="mobileMenu">
   <button class="close" id="closeMenu" aria-label="Close menu">&times;</button>
   <ul>
-    <li><a href="about.html" class="is-current">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="booking.html">Booking</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="/about" class="is-current">About</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/booking">Booking</a></li>
+    <li><a href="/contact">Contact</a></li>
   </ul>
   <button class="m-cta" data-open-modal>Inquire</button>
   <div class="meta">(612) 695-6942 &middot; Minnesota &amp; Surrounding Areas</div>
@@ -501,8 +502,8 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
       <h2 class="reveal">Ready to start planning?</h2>
       <p class="reveal">Tell us what you're imagining. We'll help you turn it into something extraordinary.</p>
       <div class="cta-ctas reveal">
-        <a class="btn btn-solid" href="booking.html">Book Your Event <span class="arrow">&rarr;</span></a>
-        <a class="btn btn-outline" href="portfolio.html">See Our Work</a>
+        <a class="btn btn-solid" href="/booking">Book Your Event <span class="arrow">&rarr;</span></a>
+        <a class="btn btn-outline" href="/portfolio">See Our Work</a>
       </div>
     </div>
   </section>
@@ -521,10 +522,10 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
         <div class="footer-col">
           <h5>Explore</h5>
           <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="booking.html">Booking</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="/booking">Booking</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -554,7 +555,7 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
 
 <div class="sticky-cta">
   <a href="tel:+16126956942" aria-label="Call EventifyAllure">Call</a>
-  <a href="booking.html">Book Your Event</a>
+  <a href="/booking">Book Your Event</a>
 </div>
 
 <!-- ============ QUICK INQUIRY MODAL (available on every page) ============ -->
@@ -778,7 +779,7 @@ if (overlay) {
   // Even without the popup modal on this page, "data-open-modal" buttons should still
   // Go somewhere useful: send them to the dedicated Booking page.
   document.querySelectorAll('[data-open-modal]').forEach(b => {
-    b.addEventListener('click', () => { window.location.href = 'booking.html'; });
+    b.addEventListener('click', () => { window.location.href = '/booking'; });
   });
 }
 
