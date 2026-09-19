@@ -440,10 +440,10 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
           <div class="step-eyebrow">Step 01 / 05</div>
           <h3>Tell us about you.</h3>
           <div class="field-row">
-            <div class="field"><label>Full Name</label><input type="text" placeholder="Your name"></div>
-            <div class="field"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+            <div class="field"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required></div>
+            <div class="field"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>
           </div>
-          <div class="field"><label>Phone</label><input type="tel" placeholder="(612) 555-0100"></div>
+          <div class="field"><label>Phone</label><input type="tel" name="phone" placeholder="(612) 555-0100" required></div>
           <div class="modal-nav"><span></span><button class="btn btn-outline" data-next>Continue <span class="arrow">&rarr;</span></button></div>
         </div>
 
@@ -452,9 +452,20 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
           <h3>What are we creating?</h3>
           <div class="field">
             <label>Event Type</label>
-            <select><option>Birthday or Milestone</option><option>Baby Shower or Gender Reveal</option><option>Kids' Celebration</option><option>Wedding or Bridal Event</option><option>Proposal or Romantic Event</option><option>Graduation</option><option>Christening or Religious Celebration</option><option>Corporate Event</option><option>Tablescape</option><option>Backdrop or Installation</option><option>Something else</option></select>
-          </div>
-          <div class="field"><label>Guest Count</label><input type="text" placeholder="e.g. 50"></div>
+<select name="eventType">
+  <option>Birthday or Milestone</option>
+  <option>Baby Shower or Gender Reveal</option>
+  <option>Kids' Celebration</option>
+  <option>Wedding or Bridal Event</option>
+  <option>Proposal or Romantic Event</option>
+  <option>Graduation</option>
+  <option>Christening or Religious Celebration</option>
+  <option>Corporate Event</option>
+  <option>Tablescape</option>
+  <option>Backdrop or Installation</option>
+  <option>Something else</option>
+</select>          </div>
+          <div class="field"><label>Guest Count</label><input type="text" name="guestCount" placeholder="e.g. 50"></div>
           <div class="modal-nav"><button class="step-back" data-back>&larr; Back</button><button class="btn btn-outline" data-next>Continue <span class="arrow">&rarr;</span></button></div>
         </div>
 
@@ -462,8 +473,8 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
           <div class="step-eyebrow">Step 03 / 05</div>
           <h3>When and where?</h3>
           <div class="field-row">
-            <div class="field"><label>Event Date</label><input type="text" placeholder="e.g. June 2026"></div>
-            <div class="field"><label>Location</label><input type="text" placeholder="City, state"></div>
+            <div class="field"><label>Event Date</label><input type="text" name="eventDate" placeholder="e.g. June 2026"></div>
+            <div class="field"><label>Location</label><input type="text" name="venue" placeholder="City, state"></div>
           </div>
           <div class="modal-nav"><button class="step-back" data-back>&larr; Back</button><button class="btn btn-outline" data-next>Continue <span class="arrow">&rarr;</span></button></div>
         </div>
@@ -471,7 +482,7 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
         <div class="modal-step" data-modal-step>
           <div class="step-eyebrow">Step 04 / 05</div>
           <h3>Tell us about your vision.</h3>
-          <div class="field"><label>Vision / Message</label><textarea placeholder="Describe the feeling you want your guests to leave with..."></textarea></div>
+          <div class="field"><label>Vision / Message</label><textarea name="message" placeholder="Describe the feeling you want your guests to leave with..."></textarea></div>
           <div class="modal-nav"><button class="step-back" data-back>&larr; Back</button><button class="btn btn-outline" data-next>Continue <span class="arrow">&rarr;</span></button></div>
         </div>
 
@@ -480,8 +491,13 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
           <h3>Let's talk investment.</h3>
           <div class="field">
             <label>Budget Range</label>
-            <select><option>Under $500</option><option>$500 to $1,500</option><option>$1,500 to $3,000</option><option>$3,000 to $6,000</option><option>$6,000+</option></select>
-          </div>
+<select name="budget">
+  <option>Under $500</option>
+  <option>$500 to $1,500</option>
+  <option>$1,500 to $3,000</option>
+  <option>$3,000 to $6,000</option>
+  <option>$6,000+</option>
+</select>          </div>
           <div class="modal-nav"><button class="step-back" data-back>&larr; Back</button><button class="btn btn-solid" data-submit>Send Inquiry <span class="arrow">&rarr;</span></button></div>
         </div>
 
@@ -510,7 +526,7 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
     <div class="wrap">
       <div class="faq-head reveal">
         <span class="eyebrow">Good to Know</span>
-        <h2>A few common questions.</h2>
+        <h2>AFREQUENTLY ASKED QUESTIONS.</h2>
       </div>
       <div class="faq-list reveal">
         <div class="faq-item">
@@ -598,10 +614,10 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
       <div class="step-eyebrow">Step 01 / 05</div>
       <h3>Tell us about you.</h3>
       <div class="field-row">
-        <div class="field"><label>Full Name</label><input type="text" placeholder="Your name"></div>
-        <div class="field"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+        <div class="field"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required></div>
+        <div class="field"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>
       </div>
-      <div class="field"><label>Phone</label><input type="tel" placeholder="(612) 555-0100"></div>
+      <div class="field"><label>Phone</label><input type="tel" name="phone" placeholder="(612) 555-0100" required></div>
       <div class="modal-nav"><span></span><button class="btn btn-outline" data-next>Continue <span class="arrow">&rarr;</span></button></div>
     </div>
 
@@ -612,7 +628,7 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
         <label>Event Type</label>
         <select><option>Birthday or Milestone</option><option>Baby Shower or Gender Reveal</option><option>Kids' Celebration</option><option>Wedding or Bridal Event</option><option>Proposal or Romantic Event</option><option>Graduation</option><option>Christening or Religious Celebration</option><option>Corporate Event</option><option>Tablescape</option><option>Backdrop or Installation</option><option>Something else</option></select>
       </div>
-      <div class="field"><label>Guest Count</label><input type="text" placeholder="e.g. 50"></div>
+      <div class="field"><label>Guest Count</label><input type="text" name="guestCount" placeholder="e.g. 50"></div>
       <div class="modal-nav"><button class="step-back" data-back>&larr; Back</button><button class="btn btn-outline" data-next>Continue <span class="arrow">&rarr;</span></button></div>
     </div>
 
@@ -620,8 +636,8 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
       <div class="step-eyebrow">Step 03 / 05</div>
       <h3>When and where?</h3>
       <div class="field-row">
-        <div class="field"><label>Event Date</label><input type="text" placeholder="e.g. June 2026"></div>
-        <div class="field"><label>Location</label><input type="text" placeholder="City, state"></div>
+        <div class="field"><label>Event Date</label><input type="text" name="eventDate" placeholder="e.g. June 2026"></div>
+        <div class="field"><label>Location</label><input type="text" name="venue" placeholder="City, state"></div>
       </div>
       <div class="modal-nav"><button class="step-back" data-back>&larr; Back</button><button class="btn btn-outline" data-next>Continue <span class="arrow">&rarr;</span></button></div>
     </div>
@@ -629,7 +645,7 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
     <div class="modal-step" data-modal-step>
       <div class="step-eyebrow">Step 04 / 05</div>
       <h3>Tell us about your vision.</h3>
-      <div class="field"><label>Vision / Message</label><textarea placeholder="Describe the feeling you want your guests to leave with..."></textarea></div>
+      <div class="field"><label>Vision / Message</label><textarea name="message" placeholder="Describe the feeling you want your guests to leave with..."></textarea></div>
       <div class="modal-nav"><button class="step-back" data-back>&larr; Back</button><button class="btn btn-outline" data-next>Continue <span class="arrow">&rarr;</span></button></div>
     </div>
 
@@ -828,7 +844,54 @@ if (bookingForm) {
   bookingForm.querySelectorAll('[data-next]').forEach(b => b.addEventListener('click', () => goTo(Math.min(step+1, steps.length-1))));
   bookingForm.querySelectorAll('[data-back]').forEach(b => b.addEventListener('click', () => goTo(Math.max(step-1, 0))));
   const submitBtn = bookingForm.querySelector('[data-submit]');
-  if (submitBtn) submitBtn.addEventListener('click', () => goTo(steps.length-1));
+
+if (submitBtn) {
+  submitBtn.addEventListener('click', async () => {
+
+    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyBafPo17U6EUoq9YVMLXRsFzjAYIdqA95WwI7F6Sz8agmq7kaN_06D1YnTvvOMl-Ok1w/exec';
+
+    const data = {
+      name: bookingForm.querySelector('[name="name"]').value.trim(),
+      email: bookingForm.querySelector('[name="email"]').value.trim(),
+      phone: bookingForm.querySelector('[name="phone"]').value.trim(),
+      eventType: bookingForm.querySelector('[name="eventType"]').value,
+      guestCount: bookingForm.querySelector('[name="guestCount"]').value.trim(),
+      eventDate: bookingForm.querySelector('[name="eventDate"]').value.trim(),
+      venue: bookingForm.querySelector('[name="venue"]').value.trim(),
+      message: bookingForm.querySelector('[name="message"]').value.trim(),
+      budget: bookingForm.querySelector('[name="budget"]').value
+    };
+
+    if (!data.name || !data.email || !data.phone) {
+      alert('Please complete your name, email, and phone number.');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Sending...';
+
+    try {
+      await fetch(WEB_APP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams(data)
+      });
+
+      goTo(steps.length - 1);
+
+    } catch (error) {
+      console.error('Booking submission error:', error);
+
+      alert('Something went wrong while sending your inquiry. Please try again or contact us directly.');
+
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = 'Send Inquiry <span class="arrow">&rarr;</span>';
+    }
+  });
+}
 }
 
 </script>
