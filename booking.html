@@ -600,10 +600,8 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
   </div>
 </footer>
 
-<div class="sticky-cta">
-  <a href="tel:+16126956942" aria-label="Call EventifyAllure">Call</a>
-  <a href="/booking">Book Your Event</a>
-</div>
+
+
 
 <!-- ============ QUICK INQUIRY MODAL (available on every page) ============ -->
 <div class="modal-overlay" id="modalOverlay">
@@ -849,7 +847,7 @@ if (bookingForm) {
 if (submitBtn) {
   submitBtn.addEventListener('click', async () => {
 
-    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyhZs-2UlrEu2lohwfovGVocD71CZNkKn3vMmpiQ_p8i0eodcHHC-adzo9eP9ToEcvEjw/exec';
+    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzdNmTCRbfk04eVWyG1XI3BA-f_B9CEWEgoKtQpoZzNpLPutMJcLLgzp48j3qUwu611pQ/exec';
 
     const data = {
       name: bookingForm.querySelector('[name="name"]').value.trim(),
