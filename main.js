@@ -230,6 +230,22 @@ if (overlay) {
       submitBtn.innerHTML = 'Sending...';
 
       try {
+        const subject = `Quick inquiry from ${data.name}`;
+        const body = [
+          `Name: ${data.name}`,
+          `Email: ${data.email}`,
+          `Phone: ${data.phone}`,
+          `Event type: ${data.eventType}`,
+          `Guest count: ${data.guestCount}`,
+          `Event date: ${data.eventDate}`,
+          `Venue: ${data.venue}`,
+          `Message: ${data.message}`,
+          `Budget: ${data.budget}`
+        ].join('\n');
+        window.location.href = `mailto:afinniadenike@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        goToStep(modalSteps.length - 1);
+
+        /* Brevo submission retained for reactivation:
         const response = await fetch('/api/send-email', {
           method: 'POST',
           headers: {
@@ -245,6 +261,7 @@ if (overlay) {
         }
 
         goToStep(modalSteps.length - 1);
+        */
 
       } catch (error) {
         console.error('Inquiry submission error:', error);
@@ -336,6 +353,22 @@ if (bookingForm) {
       submitBtn.innerHTML = 'Sending...';
 
       try {
+        const subject = `Booking request from ${data.name}`;
+        const body = [
+          `Name: ${data.name}`,
+          `Email: ${data.email}`,
+          `Phone: ${data.phone}`,
+          `Event type: ${data.eventType}`,
+          `Guest count: ${data.guestCount}`,
+          `Event date: ${data.eventDate}`,
+          `Venue: ${data.venue}`,
+          `Message: ${data.message}`,
+          `Budget: ${data.budget}`
+        ].join('\n');
+        window.location.href = `mailto:afinniadenike@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        goTo(steps.length - 1);
+
+        /* Brevo submission retained for reactivation:
         const response = await fetch('/api/send-booking', {
           method: 'POST',
           headers: {
@@ -351,6 +384,7 @@ if (bookingForm) {
         }
 
         goTo(steps.length - 1);
+        */
 
       } catch (error) {
         console.error('Booking submission error:', error);
