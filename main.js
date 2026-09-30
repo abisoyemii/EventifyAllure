@@ -139,50 +139,230 @@ if (lbTiles.length && lightbox) {
   });
 }
 
+
 /* ============ INQUIRY MODAL (every page: the quick popup version) ============ */
 const overlay = document.getElementById('modalOverlay');
+
 if (overlay) {
   const modalSteps = overlay.querySelectorAll('[data-modal-step]');
   const progressDots = overlay.querySelectorAll('#modalProgress span');
   let currentStep = 0;
-  function openModal(){ overlay.classList.add('open'); document.body.style.overflow='hidden'; }
-  function closeModalFn(){ overlay.classList.remove('open'); document.body.style.overflow=''; }
-  function goToStep(n){
-    modalSteps.forEach((s,i)=> s.classList.toggle('active', i===n));
-    progressDots.forEach((d,i)=>{ d.classList.toggle('done', i<n); d.classList.toggle('current', i===n); });
+
+  function openModal() {
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModalFn() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function goToStep(n) {
+    modalSteps.forEach((s, i) => {
+      s.classList.toggle('active', i === n);
+    });
+
+    progressDots.forEach((d, i) => {
+      d.classList.toggle('done', i < n);
+      d.classList.toggle('current', i === n);
+    });
+
     currentStep = n;
   }
-  document.querySelectorAll('[data-open-modal]').forEach(b => b.addEventListener('click', () => { openModal(); goToStep(0); }));
+
+  document.querySelectorAll('[data-open-modal]').forEach(button => {
+    button.addEventListener('click', () => {
+      openModal();
+      goToStep(0);
+    });
+  });
+
   const modalClose = document.getElementById('modalClose');
-  if (modalClose) modalClose.addEventListener('click', closeModalFn);
-  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModalFn(); });
-  overlay.querySelectorAll('[data-next]').forEach(b => b.addEventListener('click', () => goToStep(Math.min(currentStep+1, modalSteps.length-1))));
-  overlay.querySelectorAll('[data-back]').forEach(b => b.addEventListener('click', () => goToStep(Math.max(currentStep-1, 0))));
+
+  if (modalClose) {
+    modalClose.addEventListener('click', closeModalFn);
+  }
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      closeModalFn();
+    }
+  });
+
+  overlay.querySelectorAll('[data-next]').forEach(button => {
+    button.addEventListener('click', () => {
+      goToStep(Math.min(currentStep + 1, modalSteps.length - 1));
+    });
+  });
+
+  overlay.querySelectorAll('[data-back]').forEach(button => {
+    button.addEventListener('click', () => {
+      goToStep(Math.max(currentStep - 1, 0));
+    });
+  });
+
   const submitBtn = overlay.querySelector('[data-submit]');
-  if (submitBtn) submitBtn.addEventListener('click', () => goToStep(modalSteps.length-1));
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModalFn(); });
+
+  if (submitBtn) {
+    submitBtn.addEventListener('click', async () => {
+      const fields = overlay.querySelectorAll('input, select, textarea');
+
+      const data = {
+        name: fields[0]?.value.trim() || '',
+        email: fields[1]?.value.trim() || '',
+        phone: fields[2]?.value.trim() || '',
+        eventType: fields[3]?.value || '',
+        guestCount: fields[4]?.value.trim() || '',
+        eventDate: fields[5]?.value.trim() || '',
+        venue: fields[6]?.value.trim() || '',
+        message: fields[7]?.value.trim() || '',
+        budget: fields[8]?.value || ''
+      };
+
+      if (!data.name || !data.email) {
+        alert('Please complete your name and email address.');
+        goToStep(0);
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Sending...';
+
+      try {
+        const response = await fetch('/api/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.error || 'Unable to send your inquiry.');
+        }
+
+        goToStep(modalSteps.length - 1);
+
+      } catch (error) {
+        console.error('Inquiry submission error:', error);
+
+        alert(
+          error.message ||
+          'Something went wrong while sending your inquiry. Please try again or contact us directly.'
+        );
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Send Inquiry <span class="arrow">&rarr;</span>';
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeModalFn();
+    }
+  });
+
 } else {
-  // Even without the popup modal on this page, "data-open-modal" buttons should still
-  // Go somewhere useful: send them to the dedicated Booking page.
-  document.querySelectorAll('[data-open-modal]').forEach(b => {
-    b.addEventListener('click', () => { window.location.href = '/booking'; });
+
+  // Without the popup modal, "data-open-modal" buttons go to Booking.
+  document.querySelectorAll('[data-open-modal]').forEach(button => {
+    button.addEventListener('click', () => {
+      window.location.href = '/booking';
+    });
   });
 }
 
 /* ============ INLINE BOOKING STEPPER (Booking page: full page version, not a popup) ============ */
 const bookingForm = document.getElementById('bookingForm');
+
 if (bookingForm) {
   const steps = bookingForm.querySelectorAll('[data-modal-step]');
   const dots = bookingForm.querySelectorAll('#bookingProgress span');
   let step = 0;
-  function goTo(n){
-    steps.forEach((s,i)=> s.classList.toggle('active', i===n));
-    dots.forEach((d,i)=>{ d.classList.toggle('done', i<n); d.classList.toggle('current', i===n); });
+
+  function goTo(n) {
+    steps.forEach((s, i) => s.classList.toggle('active', i === n));
+
+    dots.forEach((d, i) => {
+      d.classList.toggle('done', i < n);
+      d.classList.toggle('current', i === n);
+    });
+
     step = n;
-    bookingForm.scrollIntoView({ behavior:'smooth', block:'start' });
+    bookingForm.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
   }
-  bookingForm.querySelectorAll('[data-next]').forEach(b => b.addEventListener('click', () => goTo(Math.min(step+1, steps.length-1))));
-  bookingForm.querySelectorAll('[data-back]').forEach(b => b.addEventListener('click', () => goTo(Math.max(step-1, 0))));
+
+  bookingForm.querySelectorAll('[data-next]').forEach(button => {
+    button.addEventListener('click', () => {
+      goTo(Math.min(step + 1, steps.length - 1));
+    });
+  });
+
+  bookingForm.querySelectorAll('[data-back]').forEach(button => {
+    button.addEventListener('click', () => {
+      goTo(Math.max(step - 1, 0));
+    });
+  });
+
   const submitBtn = bookingForm.querySelector('[data-submit]');
-  if (submitBtn) submitBtn.addEventListener('click', () => goTo(steps.length-1));
+
+  if (submitBtn) {
+    submitBtn.addEventListener('click', async () => {
+      const data = {
+        name: bookingForm.querySelector('[name="name"]')?.value.trim() || '',
+        email: bookingForm.querySelector('[name="email"]')?.value.trim() || '',
+        phone: bookingForm.querySelector('[name="phone"]')?.value.trim() || '',
+        eventType: bookingForm.querySelector('[name="eventType"]')?.value || '',
+        guestCount: bookingForm.querySelector('[name="guestCount"]')?.value.trim() || '',
+        eventDate: bookingForm.querySelector('[name="eventDate"]')?.value.trim() || '',
+        venue: bookingForm.querySelector('[name="venue"]')?.value.trim() || '',
+        message: bookingForm.querySelector('[name="message"]')?.value.trim() || '',
+        budget: bookingForm.querySelector('[name="budget"]')?.value || ''
+      };
+
+      if (!data.name || !data.email || !data.phone) {
+        alert('Please complete your name, email, and phone number.');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Sending...';
+
+      try {
+        const response = await fetch('/api/send-booking', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.error || 'Unable to send booking request.');
+        }
+
+        goTo(steps.length - 1);
+
+      } catch (error) {
+        console.error('Booking submission error:', error);
+
+        alert(
+          error.message ||
+          'Something went wrong while sending your booking request. Please try again or contact us directly.'
+        );
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Send Inquiry <span class="arrow">&rarr;</span>';
+      }
+    });
+  }
 }
