@@ -766,7 +766,49 @@ if (overlay) {
   overlay.querySelectorAll('[data-next]').forEach(b => b.addEventListener('click', () => goToStep(Math.min(currentStep+1, modalSteps.length-1))));
   overlay.querySelectorAll('[data-back]').forEach(b => b.addEventListener('click', () => goToStep(Math.max(currentStep-1, 0))));
   const submitBtn = overlay.querySelector('[data-submit]');
-  if (submitBtn) submitBtn.addEventListener('click', () => goToStep(modalSteps.length-1));
+  if (submitBtn) {
+    const submitLabel = submitBtn.innerHTML;
+    submitBtn.addEventListener('click', async () => {
+      const fields = overlay.querySelectorAll('input, select, textarea');
+      const data = {
+        name: fields[0]?.value.trim() || '',
+        email: fields[1]?.value.trim() || '',
+        phone: fields[2]?.value.trim() || '',
+        eventType: fields[3]?.value || '',
+        guestCount: fields[4]?.value.trim() || '',
+        eventDate: fields[5]?.value.trim() || '',
+        venue: fields[6]?.value.trim() || '',
+        message: fields[7]?.value.trim() || '',
+        budget: fields[8]?.value || ''
+      };
+
+      if (!data.name || !data.email) {
+        alert('Please complete your name and email address.');
+        goToStep(0);
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      try {
+        const response = await fetch('/api/send-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const result = await response.json();
+
+        if (!response.ok) throw new Error(result.error || 'Unable to send your inquiry.');
+        goToStep(modalSteps.length - 1);
+      } catch (error) {
+        console.error('Inquiry submission error:', error);
+        alert(error.message || 'Something went wrong while sending your inquiry. Please try again or contact us directly.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = submitLabel;
+      }
+    });
+  }
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModalFn(); });
 } else {
   // Even without the popup modal on this page, "data-open-modal" buttons should still
