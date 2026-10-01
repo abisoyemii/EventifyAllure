@@ -72,7 +72,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         sender: {
           name: 'EventifyAllure Bookings',
-          email: 'booking@eventifyallure.co'
+          email: 'bookings@eventifyallure.co'
         },
         to: [
           {
