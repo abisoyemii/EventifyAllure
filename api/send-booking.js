@@ -81,8 +81,8 @@ export default async function handler(req, res) {
           }
         ],
         replyTo: {
-          email,
-          name
+          email: 'bookings@eventifyallure.co',
+          name: 'EventifyAllure Bookings'
         },
         subject: `New EventifyAllure Booking Request from ${name}`,
         htmlContent
