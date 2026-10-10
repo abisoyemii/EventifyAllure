@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  if (!process.env.BREVO_API_KEY) {
+  if (!process.env.BREVO_API_KEY || !process.env.BREVO_SENDER_EMAIL || !process.env.LEAD_RECIPIENT_EMAIL) {
     return res.status(500).json({ error: 'Email service is not configured.' });
   }
 
@@ -70,16 +70,16 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         sender: {
           name: 'EventifyAllure',
-          email: 'info@eventifyallure.co'
+          email: process.env.BREVO_SENDER_EMAIL
         },
         to: [
           {
-            email: 'afinniadenike@gmail.com',
+            email: process.env.LEAD_RECIPIENT_EMAIL,
             name: 'EventifyAllure'
           }
         ],
         replyTo: {
-          email: 'info@eventifyallure.co',
+          email: process.env.BREVO_SENDER_EMAIL,
           name: 'EventifyAllure'
         },
         subject: `New EventifyAllure Inquiry from ${name}`,
