@@ -641,7 +641,7 @@ footer{ border-top:1px solid var(--line); padding:clamp(2.5rem,5vw,3.5rem) 0 2re
 /* Confirms JS actually ran. See the matching .js-ready rule in style.css.
    Also force-reveals everything after 2.5s no matter what, as a second safety net. */
 document.documentElement.classList.add('js-ready');
-axrsetTimeout(() => {
+setTimeout(() => {
   document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in'));
 }, 2500);
 
