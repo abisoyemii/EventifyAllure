@@ -126,6 +126,13 @@
 }
 @media(max-width:480px){.lp-cards{grid-template-columns:1fr;}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}.lp-gallery figure:hover img{transform:none;}}
+.lp-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--lp-line);border:1px solid var(--lp-line);margin-top:2.4rem;}
+.lp-link{background:var(--lp-paper);padding:1.3rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:var(--lp-serif);font-size:1.15rem;color:var(--lp-ink);transition:background .35s;}
+.lp-link:hover{background:var(--lp-sand);}
+.lp-link span{color:var(--lp-mocha);}
+.lp-link:focus-visible{outline:2px solid var(--lp-taupe);outline-offset:-2px;}
+.lp-gallery.two{grid-template-columns:repeat(2,minmax(0,1fr));}
+@media(max-width:700px){.lp-links{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -195,6 +202,9 @@
           <li>Baby showers and gender reveals</li><li>Birthdays and milestones</li><li>Weddings and bridal events</li><li>Proposals</li><li>Graduations</li><li>Corporate events</li>
         </ul>
       </div>
+      <div class="lp-head" style="margin-top:2.6rem;margin-bottom:0"><h3 style="font-size:1rem;letter-spacing:.2em;text-transform:uppercase;font-family:inherit;font-weight:500;color:var(--lp-mocha)">Explore by event</h3></div>
+      <div class="lp-links"><a class="lp-link" href="/balloon-decor-minneapolis">Balloon décor in Minneapolis <span>&rarr;</span></a><a class="lp-link" href="/baby-shower-decor-minneapolis">Baby shower décor in Minneapolis <span>&rarr;</span></a><a class="lp-link" href="/birthday-decor-minneapolis">Birthday party décor in Minneapolis <span>&rarr;</span></a><a class="lp-link" href="/wedding-bridal-decor-minneapolis">Wedding and bridal décor in Minneapolis <span>&rarr;</span></a><a class="lp-link" href="/event-decor-minneapolis">Event décor in Minneapolis <span>&rarr;</span></a><a class="lp-link" href="/event-planner-minneapolis">Event planning and styling in Minneapolis <span>&rarr;</span></a></div>
+
     </div>
   </section>
 
